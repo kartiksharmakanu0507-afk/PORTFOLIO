@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #141010;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  top: -250px;
+  left: -150px;
+  z-index: -1;
+}
+
+nav {
+  width: 100%;
+  padding: 35px 80px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+nav a {
+  color: #d5d5d5;
+  text-decoration: none;
+  font-size: 16px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.line1,
+.line2 {
+  position: absolute;
+  height: 2px;
+  background: white;
+}
+
+.line1 {
+  width: 350px;
+  top: 90px;
+  left: 0;
+}
+
+.line2 {
+  width: 350px;
+  bottom: 90px;
+  right: 0;
+}
+
+.dots {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  display: flex;
+  gap: 10px;
+}
+
+.dots span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+}
+
+.portfolio-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.portfolio-page h1 {
+  font-size: 120px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+  gap: 80px;
+  position: relative;
+}
+
+.left img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.1);
+}
+
+.right {
+  max-width: 650px;
+}
+
+.right h1 {
+  font-size: 85px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.right h3 {
+  font-size: 25px;
+  color: #bdbdbd;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.right p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #d8d8d8;
+  margin-bottom: 35px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 35px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+.projects {
+  min-height: 100vh;
+  padding: 120px 80px;
+  position: relative;
+}
+
+.projects h1 {
+  text-align: center;
+  font-size: 90px;
+  margin-bottom: 80px;
+}
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 900px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.project-images {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.project-images img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.card h2 {
+  font-size: 40px;
+  padding: 30px 30px 15px;
+}
+
+.card p {
+  color: #cfcfcf;
+  padding: 0 30px 35px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.experience {
+  min-height: 100vh;
+  padding: 120px 80px;
+  position: relative;
+}
+
+.experience h1 {
+  text-align: center;
+  font-size: 90px;
+  margin-bottom: 80px;
+}
+
+.timeline {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.timeline-box {
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+}
+
+.timeline-box h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.timeline-box h4 {
+  color: #bdbdbd;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.timeline-box p {
+  color: #d8d8d8;
+  line-height: 1.8;
+}
+
+@media (max-width: 950px) {
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .portfolio-page h1 {
+    font-size: 60px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 140px 30px;
+  }
+
+  .left img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .right h1 {
+    font-size: 55px;
+  }
+
+  .projects h1,
+  .experience h1 {
+    font-size: 55px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .project-images img {
+    height: 250px;
+  }
+
+  .line1,
+  .line2 {
+    width: 180px;
+  }
+}
